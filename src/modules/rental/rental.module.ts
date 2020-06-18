@@ -9,6 +9,8 @@ import { RentalDetailComponent } from './components/rental-detail/rental-detail.
 import { HttpClientModule } from '@angular/common/http';
 import { UcwordsPipe } from './pipes/ucwords.pipe';
 import { UpperPipe } from './pipes/upper.pipe';
+import { MapModule } from '../map/map.module';
+
 
 
 
@@ -19,7 +21,8 @@ import { UpperPipe } from './pipes/upper.pipe';
   imports: [
     CommonModule,
     RentalRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    MapModule
   ],
   providers: [RentalService] /*register a service */
 })

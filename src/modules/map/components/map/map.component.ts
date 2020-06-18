@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+
+import { MapService } from '../../services/map.service';
 
 @Component({
   selector: 'app-map',
@@ -6,12 +8,23 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./map.component.scss']
 })
 export class MapComponent implements OnInit {
-  lat: number = 51.678418;
-  lng: number = 7.809007;
+  @Input()  location: string;
+  lat = 51.678418;
+  lng = 7.809007;
 
-  constructor() { }
+  constructor(private mapService: MapService) { }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
+    mapReadyHandler(){
+      this.mapService.geoCodeLocation(this.location).subscribe(
+        (coordinates) =>{
+          this.lat = coordinates.lat;
+          this.lng = coordinates.lng;
+
+        }
+      );
+
+    }
+  
 
 }

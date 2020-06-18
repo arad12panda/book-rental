@@ -10,7 +10,7 @@ import { AgmCoreModule } from '@agm/core';
   exports: [MapComponent],
   imports: [
     AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyAUszxJRJt7ptqqxmHp9dctSOzlJjGum38'
+      apiKey: ''
     })
 
   ]
